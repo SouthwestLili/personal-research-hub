@@ -13,17 +13,15 @@ export function PaperCard({ paper }: { paper: Paper }) {
         <span>{paper.year}</span>
       </div>
       <h3 className="mt-5 font-heading text-2xl leading-tight tracking-[-0.02em]">
-        <Link href={`/papers/${paper.slug}`} className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-3">
-          {paper.title}
-        </Link>
+        {paper.title}
       </h3>
       <p className="mt-3 text-sm text-muted-foreground">{paper.authors} · {paper.venue}</p>
       <p className="mt-5 flex-1 text-sm leading-6 text-muted-foreground">{paper.summary}</p>
       <div className="mt-6 flex items-center justify-between gap-4 border-t border-border/80 pt-4">
         <span className="text-xs text-muted-foreground">{paper.topics[0]}</span>
-        <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+        <Link href={`/papers/${paper.slug}`} className="text-link inline-flex items-center gap-1 text-sm font-medium">
           Read notes <ArrowUpRight className="size-4" aria-hidden="true" />
-        </span>
+        </Link>
       </div>
     </article>
   );

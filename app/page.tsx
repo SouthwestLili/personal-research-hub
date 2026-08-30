@@ -1,4 +1,4 @@
-import { ArrowRight, Orbit } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { ActivityItem } from '@/components/activity-item';
 import { CurrentResearch } from '@/components/current-research';
@@ -13,7 +13,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="site-container grid min-h-[34rem] items-center gap-12 py-16 lg:grid-cols-[1.18fr_0.82fr] lg:py-24">
+      <section className="site-container grid items-start gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
         <div>
           <p className="eyebrow">Personal Research Hub</p>
           <h1 className="display-title mt-6">{siteProfile.name}</h1>
@@ -33,23 +33,16 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <aside className="paper-panel relative rounded-xl p-7 sm:p-9" aria-label="Journal purpose">
-          <Orbit className="size-9 text-primary" aria-hidden="true" />
-          <p className="mt-8 font-heading text-2xl leading-snug">
-            A living record of questions, readings, conversations, and research growth.
-          </p>
-          <div className="mt-8 border-t border-border pt-5 text-sm leading-6 text-muted-foreground">
-            <p>Research activity is visible.</p>
-            <p>Confidential research stays private.</p>
+        <aside className="space-y-4" aria-label="Current research and latest activity">
+          <CurrentResearch />
+          <div className="paper-panel rounded-xl px-5">
+            <p className="eyebrow pt-5">Latest Activity</p>
+            <ActivityItem activity={recentActivities[0]} />
           </div>
         </aside>
       </section>
 
-      <div className="site-container">
-        <CurrentResearch />
-      </div>
-
-      <section className="page-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+      <section className="site-container grid gap-12 pb-16 pt-8 sm:pb-20 lg:grid-cols-[1.08fr_0.92fr]">
         <div>
           <div className="flex items-end justify-between gap-6">
             <div>
