@@ -19,7 +19,11 @@ export function PaperCard({ paper }: { paper: Paper }) {
       <p className="mt-5 flex-1 text-sm leading-6 text-muted-foreground">{paper.summary}</p>
       <div className="mt-6 flex items-center justify-between gap-4 border-t border-border/80 pt-4">
         <span className="text-xs text-muted-foreground">{paper.topics[0]}</span>
-        <Link href={`/papers/${paper.slug}`} className="text-link inline-flex items-center gap-1 text-sm font-medium">
+        <Link
+          href={`/papers/${paper.slug}`}
+          aria-label={`Read notes for ${paper.title}`}
+          className="text-link inline-flex items-center gap-1 text-sm font-medium"
+        >
           Read notes <ArrowUpRight className="size-4" aria-hidden="true" />
         </Link>
       </div>
