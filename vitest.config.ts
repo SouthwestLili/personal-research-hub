@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@': import.meta.dirname,
       'next/link': `${import.meta.dirname}/test/next-link.tsx`,
+      'next/navigation': `${import.meta.dirname}/test/next-navigation.ts`,
     },
   },
 });
