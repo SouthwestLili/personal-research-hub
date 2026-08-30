@@ -1,32 +1,38 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
+import { SiteFooter } from '@/components/site-footer';
+import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
-const geistSans = Geist({
+const geist = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 export const metadata: Metadata = {
-  title: 'Untitled site',
+  title: {
+    default: 'Personal Research Hub · Lili Wang',
+    template: '%s · Lili Wang',
+  },
+  description:
+    'Research activities, paper notes, and academic interests of Lili Wang.',
+  openGraph: {
+    title: 'Personal Research Hub · Lili Wang',
+    description:
+      'Research activities, paper notes, and academic interests of Lili Wang.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={geist.variable}>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
