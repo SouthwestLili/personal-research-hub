@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import AboutPage from '@/app/about/page';
 import HomePage from '@/app/page';
@@ -20,6 +20,12 @@ describe('public route landmarks', () => {
       const { container } = render(<Page />);
       expect(container.querySelectorAll('main')).toHaveLength(1);
       expect(container.querySelectorAll('h1')).toHaveLength(1);
+      for (const link of within(container).queryAllByRole('link')) {
+        expect(link).toHaveAccessibleName();
+      }
+      for (const button of within(container).queryAllByRole('button')) {
+        expect(button).toHaveAccessibleName();
+      }
     });
   }
 });

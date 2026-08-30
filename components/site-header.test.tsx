@@ -9,4 +9,6 @@ it('exposes the five primary destinations', () => {
     expect(screen.getAllByRole('link', { name }).length).toBeGreaterThan(0);
   }
   expect(screen.queryByRole('link', { name: 'Dashboard' })).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Toggle color theme' })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Open navigation' })).toBeInTheDocument();
 });
