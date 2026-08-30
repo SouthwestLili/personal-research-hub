@@ -1,7 +1,7 @@
 import type { PublicActivity } from './types';
 
 // Activity-only records are already reduced to their public projection here.
-export const publicActivities: PublicActivity[] = [
+export const activities: PublicActivity[] = [
   {
     id: 'group-meeting-2026-08-30',
     date: '2026-08-30',

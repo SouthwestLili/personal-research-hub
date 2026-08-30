@@ -18,9 +18,26 @@ export interface Activity {
   href?: string;
 }
 
-export type PublicActivity = Omit<Activity, 'visibility'> & {
-  visibility: 'PUBLIC' | 'ACTIVITY_ONLY';
-};
+interface PublicActivityBase {
+  id: string;
+  date: string;
+  type: ActivityType;
+  publicTitle: string;
+}
+
+export interface PublicDetailedActivity extends PublicActivityBase {
+  visibility: 'PUBLIC';
+  publicSummary?: string;
+  topics?: string[];
+  href?: string;
+}
+
+export interface ActivityOnlyProjection extends PublicActivityBase {
+  visibility: 'ACTIVITY_ONLY';
+  publicSummary: 'Research discussion · Private';
+}
+
+export type PublicActivity = PublicDetailedActivity | ActivityOnlyProjection;
 
 export interface Paper {
   slug: string;

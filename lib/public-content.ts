@@ -1,4 +1,4 @@
-import { publicActivities } from '@/content/activities';
+import { activities } from '@/content/activities';
 import { papers } from '@/content/papers';
 import type { Activity, Paper, PublicActivity } from '@/content/types';
 
@@ -21,7 +21,7 @@ export function sanitizeActivities(records: Activity[]): PublicActivity[] {
 }
 
 export function getPublicActivities(): PublicActivity[] {
-  return [...publicActivities].sort((a, b) => b.date.localeCompare(a.date));
+  return [...activities].sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getPaperBySlug(slug: string): Paper | undefined {

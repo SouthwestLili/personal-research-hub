@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { sanitizeActivities } from './public-content';
+import { activities } from '@/content/activities';
 import type { Activity } from '@/content/types';
 
 const records: Activity[] = [
@@ -31,6 +32,26 @@ const records: Activity[] = [
 ];
 
 describe('sanitizeActivities', () => {
+  it('exports only privacy-safe production projections', () => {
+    const activityOnly = activities.filter(
+      (item) => item.visibility === 'ACTIVITY_ONLY',
+    );
+
+    expect(activityOnly).toHaveLength(2);
+    for (const item of activityOnly) {
+      expect(Object.keys(item).sort()).toEqual(
+        [
+          'date',
+          'id',
+          'publicSummary',
+          'publicTitle',
+          'type',
+          'visibility',
+        ].sort(),
+      );
+    }
+  });
+
   it('excludes private records', () => {
     expect(sanitizeActivities(records).map((item) => item.id)).not.toContain(
       'private',
