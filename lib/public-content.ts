@@ -13,7 +13,7 @@ export function sanitizeActivities(records: Activity[]): PublicActivity[] {
             type: record.type,
             visibility: 'ACTIVITY_ONLY' as const,
             publicTitle: record.publicTitle,
-            publicSummary: 'Research discussion · Private',
+            publicSummary: 'Research discussion · Private' as const,
           }
         : (record as PublicActivity),
     )
