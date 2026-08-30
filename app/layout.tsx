@@ -21,6 +21,21 @@ export const metadata: Metadata = {
     description:
       'Research activities, paper notes, and academic interests of Lili Wang.',
     type: 'website',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Personal Research Hub — Lili Wang',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Personal Research Hub · Lili Wang',
+    description:
+      'Research activities, paper notes, and academic interests of Lili Wang.',
+    images: ['/og.png'],
   },
 };
 
