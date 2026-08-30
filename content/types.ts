@@ -1,0 +1,48 @@
+export type Visibility = 'PUBLIC' | 'ACTIVITY_ONLY' | 'PRIVATE';
+
+export type ActivityType =
+  | 'SUPERVISOR_MEETING'
+  | 'RESEARCH_GROUP_MEETING'
+  | 'GROUP_READING'
+  | 'INDEPENDENT_READING'
+  | 'MILESTONE';
+
+export interface Activity {
+  id: string;
+  date: string;
+  type: ActivityType;
+  visibility: Visibility;
+  publicTitle: string;
+  publicSummary?: string;
+  topics?: string[];
+  href?: string;
+}
+
+export type PublicActivity = Omit<Activity, 'visibility'> & {
+  visibility: 'PUBLIC' | 'ACTIVITY_ONLY';
+};
+
+export interface Paper {
+  slug: string;
+  title: string;
+  authors: string;
+  venue: string;
+  year: number;
+  url: string;
+  readingType: 'Group Reading' | 'Independent Reading';
+  topics: string[];
+  summary: string;
+  coreIdea?: string;
+  method?: string;
+  keyTakeaways?: string[];
+  questions?: string[];
+  myThoughts?: string;
+  connectionToResearch?: string;
+  featured?: boolean;
+}
+
+export interface ResearchDirection {
+  title: string;
+  description: string;
+  questions: string[];
+}
