@@ -7,7 +7,7 @@ const activityMeta = {
   RESEARCH_GROUP_MEETING: { label: 'Research Group Meeting', icon: Users },
   GROUP_READING: { label: 'Group Paper Reading', icon: MessageCircleMore },
   INDEPENDENT_READING: { label: 'Independent Paper Reading', icon: BookOpen },
-  MILESTONE: { label: 'Research Milestone', icon: Sparkles },
+  MILESTONE: { label: 'Research Activity or Milestone', icon: Sparkles },
 } as const;
 
 export const ACTIVITY_META = activityMeta;

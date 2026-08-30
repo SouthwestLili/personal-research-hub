@@ -13,7 +13,9 @@ export function ResearchTimeline({ activities }: { activities: PublicActivity[] 
 
   return (
     <div className="space-y-14">
-      {Object.entries(years).map(([year, items]) => (
+      {Object.entries(years)
+        .sort(([a], [b]) => b.localeCompare(a))
+        .map(([year, items]) => (
         <section key={year} aria-labelledby={`year-${year}`} className="grid gap-7 md:grid-cols-[7rem_1fr]">
           <h2 id={`year-${year}`} className="font-heading text-4xl text-primary md:sticky md:top-28 md:self-start">{year}</h2>
           <ol className="relative border-l border-border pl-7 sm:pl-10">
@@ -49,7 +51,7 @@ export function ResearchTimeline({ activities }: { activities: PublicActivity[] 
             })}
           </ol>
         </section>
-      ))}
+        ))}
     </div>
   );
 }
