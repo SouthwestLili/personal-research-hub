@@ -13,17 +13,17 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="site-container grid items-start gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
+      <section className="site-container grid items-start gap-5 py-6 sm:gap-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-16">
         <div>
           <p className="eyebrow">Personal Research Hub</p>
           <h1 className="display-title mt-6">{siteProfile.name}</h1>
           <p className="mt-5 text-lg font-medium text-primary sm:text-xl">
             {siteProfile.descriptor}
           </p>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-7 sm:text-lg sm:leading-8">
             {siteProfile.introduction}
           </p>
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3" aria-label="Research interests">
+          <ul className="mt-5 hidden flex-wrap gap-x-5 gap-y-3 sm:flex sm:mt-8" aria-label="Research interests">
             {siteProfile.interests.slice(0, 4).map((interest) => (
               <li key={interest} className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="size-1.5 rounded-full bg-primary" aria-hidden="true" />

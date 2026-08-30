@@ -23,4 +23,6 @@ it('introduces Lili Wang and her academic focus', () => {
   expect(
     screen.getByRole('heading', { name: 'Featured Papers' }),
   ).toBeInTheDocument();
+  expect(screen.getByText('Latest Activity')).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: 'Read notes' }).length).toBeGreaterThan(0);
 });
