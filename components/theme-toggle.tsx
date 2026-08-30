@@ -1,12 +1,10 @@
 'use client';
 
 import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 export function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-
   useEffect(() => {
     const saved = window.localStorage.getItem('research-hub-theme');
     const initial =
@@ -14,13 +12,11 @@ export function ThemeToggle() {
       (saved === null &&
         typeof window.matchMedia === 'function' &&
         window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setDark(initial);
     document.documentElement.classList.toggle('dark', initial);
   }, []);
 
   function toggleTheme() {
-    const next = !dark;
-    setDark(next);
+    const next = !document.documentElement.classList.contains('dark');
     document.documentElement.classList.toggle('dark', next);
     window.localStorage.setItem('research-hub-theme', next ? 'dark' : 'light');
   }
@@ -31,10 +27,11 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon-lg"
       className="min-h-11 min-w-11 rounded-full"
-      aria-label={dark ? 'Use light theme' : 'Use dark theme'}
+      aria-label="Toggle color theme"
       onClick={toggleTheme}
     >
-      {dark ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+      <Moon className="dark:hidden" aria-hidden="true" />
+      <Sun className="hidden dark:block" aria-hidden="true" />
     </Button>
   );
 }

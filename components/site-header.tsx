@@ -1,6 +1,8 @@
 'use client';
 
 import { Menu } from 'lucide-react';
+import Link from 'next/link';
+import { siteProfile } from '@/content/site';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -25,19 +27,19 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-container flex h-20 items-center justify-between gap-6">
-        <a href="/" className="brand-mark" aria-label="Lili Wang home">
+        <Link href="/" className="brand-mark" aria-label={`${siteProfile.name} home`}>
           <span className="brand-monogram">LW</span>
           <span className="hidden sm:block">
-            <strong>Lili Wang</strong>
+            <strong>{siteProfile.name}</strong>
             <small>Research journal</small>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
+            <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -65,7 +67,7 @@ export function SiteHeader() {
                 {navigation.map((item) => (
                   <SheetClose
                     key={item.href}
-                    render={<a href={item.href} className="mobile-nav-link" />}
+                    render={<Link href={item.href} className="mobile-nav-link" />}
                   >
                     {item.label}
                   </SheetClose>
