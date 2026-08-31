@@ -3,6 +3,14 @@ import type { PublicActivity } from './types';
 // Activity-only records are already reduced to their public projection here.
 export const activities: PublicActivity[] = [
   {
+    id: 'supervisor-meeting-2026-08-26',
+    date: '2026-08-26',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
     id: 'qmix-reading-2026-08-25',
     date: '2026-08-25',
     type: 'INDEPENDENT_READING',
@@ -23,6 +31,30 @@ export const activities: PublicActivity[] = [
     href: '/papers/counterfactual-multi-agent-policy-gradients',
   },
   {
+    id: 'supervisor-meeting-2026-08-11',
+    date: '2026-08-11',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-31-2',
+    date: '2026-07-31',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-31-1',
+    date: '2026-07-31',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
     id: 'research-milestone-2026-07-30',
     date: '2026-07-30',
     type: 'MILESTONE',
@@ -30,6 +62,46 @@ export const activities: PublicActivity[] = [
     publicTitle: 'Research Direction Established',
     publicSummary:
       'Defined an initial research focus spanning multi-agent learning and strategic interaction.',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-24',
+    date: '2026-07-24',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-14-2',
+    date: '2026-07-14',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-14-1',
+    date: '2026-07-14',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-10-2',
+    date: '2026-07-10',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
+  },
+  {
+    id: 'supervisor-meeting-2026-07-10-1',
+    date: '2026-07-10',
+    type: 'SUPERVISOR_MEETING',
+    visibility: 'ACTIVITY_ONLY',
+    publicTitle: 'Supervisor Research Meeting',
+    publicSummary: 'Research discussion · Private',
   },
   {
     id: 'supervisor-meeting-2026-07-08-2',

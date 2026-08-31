@@ -5,13 +5,21 @@ import type { PublicActivity } from '@/content/types';
 import { ResearchTimeline } from './research-timeline';
 
 it('shows sanitized meetings without links and labels every activity type', () => {
-  render(<ResearchTimeline activities={getPublicActivities()} />);
+  const activities = getPublicActivities();
+  const privateMeetings = activities.filter(
+    (activity) => activity.type === 'SUPERVISOR_MEETING',
+  );
+  render(<ResearchTimeline activities={activities} />);
 
-  expect(screen.getAllByText('Supervisor Research Meeting')).toHaveLength(4);
+  expect(screen.getAllByText('Supervisor Research Meeting')).toHaveLength(
+    privateMeetings.length * 2,
+  );
   expect(
     screen.queryByRole('link', { name: /Supervisor Research Meeting/ }),
   ).not.toBeInTheDocument();
-  expect(screen.getAllByText('Research discussion · Private')).toHaveLength(2);
+  expect(screen.getAllByText('Research discussion · Private')).toHaveLength(
+    privateMeetings.length,
+  );
   expect(
     screen.queryByText(/Stackelberg Games, Online Learning & Incomplete Types/),
   ).not.toBeInTheDocument();
@@ -33,6 +41,7 @@ it('orders timeline dates newest first', () => {
   const dates = [...container.querySelectorAll('time')].map((time) =>
     time.getAttribute('datetime'),
   );
+  expect(dates[0]).toBe('2026-08-26');
   expect(dates).toEqual([...dates].sort((a, b) => (b ?? '').localeCompare(a ?? '')));
 });
 
