@@ -27,6 +27,7 @@ export const activities: PublicActivity[] = [
     publicSummary:
       'Discussed computational modelling in HCI and opportunities for interdisciplinary research collaboration.',
     topics: ['Human–Computer Interaction', 'Computational Modelling'],
+    href: '/timeline/hci-research-presentation-2026-08-05-3',
   },
   {
     id: 'ai-transparency-discussion-2026-08-05-2',
@@ -37,6 +38,7 @@ export const activities: PublicActivity[] = [
     publicSummary:
       'Examined how AI transparency can improve trust calibration while also affecting user autonomy, cognitive load, and decision-making.',
     topics: ['AI Transparency', 'Human–AI Interaction', 'Trust Calibration'],
+    href: '/timeline/ai-transparency-discussion-2026-08-05-2',
   },
   {
     id: 'hcii-conference-recap-2026-08-05-1',
@@ -47,6 +49,7 @@ export const activities: PublicActivity[] = [
     publicSummary:
       'Reflected on HCII conference themes spanning AI safety, explainability, ethics, privacy, and agent-based modelling.',
     topics: ['Human–Computer Interaction', 'AI Safety', 'Agent-Based Modelling'],
+    href: '/timeline/hcii-conference-recap-2026-08-05-1',
   },
   {
     id: 'supervisor-meeting-2026-07-31-2',

@@ -39,6 +39,19 @@ export interface ActivityOnlyProjection extends PublicActivityBase {
 
 export type PublicActivity = PublicDetailedActivity | ActivityOnlyProjection;
 
+export interface ActivityDetail {
+  id: string;
+  date: string;
+  type: 'RESEARCH_GROUP_MEETING' | 'GROUP_READING';
+  title: string;
+  summary: string;
+  topics: string[];
+  overview: string[];
+  keyThemes: string[];
+  mainTakeaways: string[];
+  discussion?: string[];
+}
+
 export interface Paper {
   slug: string;
   title: string;

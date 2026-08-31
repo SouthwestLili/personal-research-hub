@@ -1,6 +1,7 @@
 import { activities } from '@/content/activities';
+import { activityDetails } from '@/content/activity-details';
 import { papers } from '@/content/papers';
-import type { Activity, Paper, PublicActivity } from '@/content/types';
+import type { Activity, ActivityDetail, Paper, PublicActivity } from '@/content/types';
 
 export function sanitizeActivities(records: Activity[]): PublicActivity[] {
   return records
@@ -26,4 +27,8 @@ export function getPublicActivities(): PublicActivity[] {
 
 export function getPaperBySlug(slug: string): Paper | undefined {
   return papers.find((paper) => paper.slug === slug);
+}
+
+export function getActivityDetail(id: string): ActivityDetail | undefined {
+  return activityDetails.find((activity) => activity.id === id);
 }
