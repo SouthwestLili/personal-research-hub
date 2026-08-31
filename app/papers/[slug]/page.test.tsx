@@ -15,6 +15,13 @@ it('embeds and offers a download for a locally hosted public PDF', async () => {
   expect(within(container).getByRole('link', { name: /Download PDF/ })).toHaveAttribute(
     'download',
   );
+  const layout = within(container).getByTestId('paper-detail-layout');
+  const reader = within(container).getByTestId('paper-reader');
+  const notes = within(container).getByTestId('paper-notes');
+  expect(layout).toHaveClass('xl:grid-cols-[minmax(0,1.15fr)_minmax(22rem,0.85fr)]');
+  expect(
+    reader.compareDocumentPosition(notes) & Node.DOCUMENT_POSITION_FOLLOWING,
+  ).toBeTruthy();
 });
 
 it('uses only the official source for the ACM paper', async () => {
@@ -26,6 +33,9 @@ it('uses only the official source for the ACM paper', async () => {
   expect(within(container).queryByTitle('Embedded paper PDF')).not.toBeInTheDocument();
   expect(within(container).queryByRole('link', { name: /Download PDF/ })).not.toBeInTheDocument();
   expect(within(container).getByRole('link', { name: /Open official paper/ })).toBeInTheDocument();
+  expect(within(container).getByTestId('paper-detail-layout')).toHaveClass(
+    'max-w-reading',
+  );
 });
 
 it('uses the not-found boundary for an unknown paper slug', async () => {
