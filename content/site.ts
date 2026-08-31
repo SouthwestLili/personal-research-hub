@@ -1,6 +1,6 @@
 export const siteProfile = {
   name: 'Lili Wang',
-  descriptor: 'Computer Science · AI & Machine Learning · Student @ Carleton University',
+  descriptor: 'Computer Science @ Carleton University',
   introduction:
     'I study learning and strategic interaction in repeated multi-agent environments, with a focus on Bayesian Stackelberg games, boundedly rational behaviour, and decision-making under bandit feedback.',
   currentFocus:
