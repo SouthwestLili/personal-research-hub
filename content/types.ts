@@ -59,6 +59,7 @@ export interface Paper {
   venue: string;
   year: number;
   url: string;
+  pdfUrl?: string;
   readingType: 'Group Reading' | 'Independent Reading';
   topics: string[];
   summary: string;

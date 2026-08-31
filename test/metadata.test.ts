@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { generateMetadata } from '@/app/papers/[slug]/page';
+import { papers } from '@/content/papers';
 
 describe('public metadata', () => {
   it('uses the research-hub identity and removes starter metadata', () => {
@@ -13,14 +14,13 @@ describe('public metadata', () => {
   });
 
   it('derives paper-specific title and description', async () => {
+    const paper = papers[0];
     const metadata = await generateMetadata({
       params: Promise.resolve({
-        slug: 'qmix-monotonic-value-function-factorisation',
+        slug: paper.slug,
       }),
     });
-    expect(metadata.title).toBe(
-      'QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning',
-    );
-    expect(metadata.description).toContain('cooperative multi-agent reinforcement learning');
+    expect(metadata.title).toBe(paper.title);
+    expect(metadata.description).toBe(paper.summary);
   });
 });

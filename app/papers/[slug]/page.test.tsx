@@ -1,25 +1,31 @@
-import { render, screen } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import { expect, it } from 'vitest';
 import PaperPage from './page';
 
-it('renders the complete reviewed QMIX reading note', async () => {
+it('embeds and offers a download for a locally hosted public PDF', async () => {
   const page = await PaperPage({
-    params: Promise.resolve({ slug: 'qmix-monotonic-value-function-factorisation' }),
+    params: Promise.resolve({ slug: 'bayesian-stackelberg-markov-games-moving-target-defense' }),
   });
-  render(page);
+  const { container } = render(page);
 
-  for (const heading of [
-    'Paper Information',
-    'Summary',
-    'Core Idea',
-    'Method',
-    'Key Takeaways',
-    'Questions',
-    'My Thoughts',
-    'Connection to My Research',
-  ]) {
-    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
-  }
+  expect(within(container).getByTitle('Embedded paper PDF')).toHaveAttribute(
+    'src',
+    '/papers/bsmg-moving-target-defense.pdf',
+  );
+  expect(within(container).getByRole('link', { name: /Download PDF/ })).toHaveAttribute(
+    'download',
+  );
+});
+
+it('uses only the official source for the ACM paper', async () => {
+  const page = await PaperPage({
+    params: Promise.resolve({ slug: 'imitative-follower-deception-stackelberg-games' }),
+  });
+  const { container } = render(page);
+
+  expect(within(container).queryByTitle('Embedded paper PDF')).not.toBeInTheDocument();
+  expect(within(container).queryByRole('link', { name: /Download PDF/ })).not.toBeInTheDocument();
+  expect(within(container).getByRole('link', { name: /Open official paper/ })).toBeInTheDocument();
 });
 
 it('uses the not-found boundary for an unknown paper slug', async () => {

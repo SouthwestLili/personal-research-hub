@@ -6,5 +6,5 @@ it('wires the reviewed public dataset into the paper library', () => {
   render(<PapersPage />);
 
   expect(screen.getByRole('heading', { name: 'Paper Library' })).toBeInTheDocument();
-  expect(screen.getAllByTestId('paper-card')).toHaveLength(4);
+  expect(screen.getAllByTestId('paper-card')).toHaveLength(7);
 });
