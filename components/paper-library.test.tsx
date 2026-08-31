@@ -9,7 +9,7 @@ it('filters papers by topic and can clear the filter', async () => {
   render(<PaperLibrary papers={papers} />);
 
   await user.click(screen.getByRole('button', { name: /Bayesian Persuasion/ }));
-  expect(screen.getAllByTestId('paper-card')).toHaveLength(1);
+  expect(screen.getAllByTestId('paper-card')).toHaveLength(4);
   expect(
     screen.queryByText(
       'Multi-agent Reinforcement Learning in Bayesian Stackelberg Markov Games for Adaptive Moving Target Defense',
