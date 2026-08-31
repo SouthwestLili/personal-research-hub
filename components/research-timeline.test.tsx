@@ -7,15 +7,17 @@ import { ResearchTimeline } from './research-timeline';
 it('shows sanitized meetings without links and labels every activity type', () => {
   render(<ResearchTimeline activities={getPublicActivities()} />);
 
-  expect(screen.getByText('Weekly Research Meeting')).toBeInTheDocument();
+  expect(screen.getAllByText('Supervisor Research Meeting')).toHaveLength(4);
   expect(
-    screen.queryByRole('link', { name: /Weekly Research Meeting/ }),
+    screen.queryByRole('link', { name: /Supervisor Research Meeting/ }),
   ).not.toBeInTheDocument();
-  expect(screen.getAllByText('Research discussion · Private').length).toBeGreaterThan(0);
+  expect(screen.getAllByText('Research discussion · Private')).toHaveLength(2);
+  expect(
+    screen.queryByText(/Stackelberg Games, Online Learning & Incomplete Types/),
+  ).not.toBeInTheDocument();
 
   for (const label of [
     'Supervisor Research Meeting',
-    'Research Group Meeting',
     'Group Paper Reading',
     'Independent Paper Reading',
     'Research Activity or Milestone',

@@ -9,7 +9,9 @@ it('introduces Lili Wang and her academic focus', () => {
     screen.getByRole('heading', { name: 'Lili Wang' }),
   ).toBeInTheDocument();
   expect(
-    screen.getByText('Computer Science · AI & Machine Learning'),
+    screen.getByText(
+      'Computer Science · AI & Machine Learning · Student @ Carleton University',
+    ),
   ).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'Current Research' }),
