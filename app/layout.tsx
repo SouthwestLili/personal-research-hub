@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
-const geist = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Personal Research Hub · Lili Wang',
     template: '%s · Lili Wang',
@@ -44,7 +45,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={geist.variable}>
+      <body>
         <SiteHeader />
         {children}
         <SiteFooter />
