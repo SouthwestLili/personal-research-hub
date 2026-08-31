@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { ArrowDownRight } from 'lucide-react';
-import { researchDirections } from '@/content/research';
-import { siteProfile } from '@/content/site';
+import { currentResearch, researchDirections } from '@/content/research';
 
 export const metadata: Metadata = {
   title: 'Research',
@@ -43,9 +42,9 @@ export default function ResearchPage() {
       <section className="paper-panel mt-16 grid gap-8 rounded-xl p-7 sm:p-10 md:grid-cols-[0.72fr_1.28fr]">
         <div>
           <p className="eyebrow">Current Focus</p>
-          <h2 className="mt-4 font-heading text-3xl">Multi-Agent Learning &amp; Strategic Interaction</h2>
+          <h2 className="mt-4 font-heading text-3xl">{currentResearch.title}</h2>
         </div>
-        <p className="text-lg leading-8 text-muted-foreground">{siteProfile.currentFocus}</p>
+        <p className="text-lg leading-8 text-muted-foreground">{currentResearch.description}</p>
       </section>
     </main>
   );

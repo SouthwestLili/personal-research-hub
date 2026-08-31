@@ -2,15 +2,15 @@ export const siteProfile = {
   name: 'Lili Wang',
   descriptor: 'Computer Science @ Carleton University',
   introduction:
-    'I study learning and strategic interaction in repeated multi-agent environments, with a focus on Bayesian Stackelberg games, boundedly rational behaviour, and decision-making under bandit feedback.',
+    'I study strategic interactions and sequential decision-making under uncertainty using game-theoretic and computational approaches.',
   currentFocus:
-    'My current research examines repeated Bayesian Stackelberg games in which a leader learns to act against a follower of unknown type whose behaviour changes with interaction history. I am particularly interested in frequency-dependent utilities, quantal response, Bayesian belief updating, and bandit algorithms for environments whose state evolution is influenced by the learner’s own policy.',
+    'My current research explores game-theoretic modelling, behavioural adaptation, incomplete information, and robust decision-making in multi-agent and AI systems.',
   interests: [
-    'Bayesian Stackelberg Games',
-    'Online & Bandit Learning',
+    'Game Theory',
     'Multi-Agent Systems',
-    'Behavioural Game Theory',
-    'Learning in Security Games',
+    'Sequential Decision-Making',
+    'AI Safety',
+    'Computational Modelling',
   ],
   links: {
     github: 'https://github.com/SouthwestLili',

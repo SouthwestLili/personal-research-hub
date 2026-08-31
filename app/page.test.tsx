@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { expect, it } from 'vitest';
+import { currentResearch } from '@/content/research';
+import { siteProfile } from '@/content/site';
 import HomePage from './page';
 
 it('introduces Lili Wang and her academic focus', () => {
@@ -8,17 +10,11 @@ it('introduces Lili Wang and her academic focus', () => {
   expect(
     screen.getByRole('heading', { name: 'Lili Wang' }),
   ).toBeInTheDocument();
-  expect(
-    screen.getByText(
-      'Computer Science · AI & Machine Learning · Student @ Carleton University',
-    ),
-  ).toBeInTheDocument();
+  expect(screen.getByText(siteProfile.descriptor)).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'Current Research' }),
   ).toBeInTheDocument();
-  expect(
-    screen.getByText('Multi-Agent Learning & Strategic Interaction'),
-  ).toBeInTheDocument();
+  expect(screen.getByText(currentResearch.title)).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'Recent Activities' }),
   ).toBeInTheDocument();

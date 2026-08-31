@@ -1,40 +1,40 @@
 import type { ResearchDirection } from './types';
 
 export const currentResearch = {
-  title: 'Multi-Agent Learning & Strategic Interaction',
+  title: 'Game-Theoretic AI & Strategic Decision-Making',
   description:
-    'Exploring learning and behavioural dynamics in repeated multi-agent environments.',
+    'My current work explores strategic interactions and sequential decision-making under uncertainty, with interests in incomplete information, behavioural modelling, and robust AI systems.',
 };
 
 export const researchDirections: ResearchDirection[] = [
   {
-    title: 'Multi-Agent Systems',
+    title: 'Game-Theoretic AI',
     description:
-      'How autonomous agents learn, coordinate, compete, and adapt when their decisions continually influence one another.',
-    questions: ['Emergent coordination', 'Strategic adaptation'],
+      'Using game-theoretic frameworks to study how intelligent agents interact, make decisions, and respond to competing objectives.',
+    questions: ['Strategic interactions', 'Decision-making under uncertainty'],
   },
   {
-    title: 'Reinforcement Learning',
+    title: 'Learning & Adaptation',
     description:
-      'How sequential decision-makers can learn useful policies from interaction while balancing exploration, stability, and long-term value.',
-    questions: ['Credit assignment', 'Learning dynamics'],
+      'Understanding how agents learn from repeated interactions and adapt their behaviour as environments and other agents change.',
+    questions: ['Sequential decision-making', 'Behavioural adaptation'],
   },
   {
-    title: 'Online Learning',
+    title: 'Incomplete Information',
     description:
-      'How algorithms make reliable decisions under uncertainty when information arrives over time and the environment may change.',
-    questions: ['Regret and adaptation', 'Non-stationarity'],
+      'Studying strategic decisions when agents have limited knowledge about other participants, the environment, or the underlying model.',
+    questions: ['Uncertain agent behaviour', 'Belief and model updates'],
   },
   {
-    title: 'Game Theory',
+    title: 'Computational Research',
     description:
-      'How incentives and strategic structure explain the behaviour that emerges among rational or learning agents.',
-    questions: ['Repeated interaction', 'Equilibrium behaviour'],
+      'Developing theoretical models and computational experiments to compare behaviour across different strategic settings.',
+    questions: ['Theoretical modelling', 'Computational experiments'],
   },
   {
-    title: 'AI Robustness',
+    title: 'AI Safety & Robustness',
     description:
-      'How intelligent systems can remain dependable when environments, partners, objectives, or assumptions shift.',
-    questions: ['Distribution shift', 'Reliable adaptation'],
+      'Exploring how AI systems can support reliable decisions in uncertain, changing, or adversarial environments.',
+    questions: ['Adversarial settings', 'Reliable decision-making'],
   },
 ];
