@@ -89,7 +89,6 @@ export default async function PaperPage({ params }: PaperPageProps) {
               <PaperNoteSection title="Questions"><ul className="list-disc space-y-3 pl-5">{paper.questions.map((item) => <li key={item}>{item}</li>)}</ul></PaperNoteSection>
             ) : null}
             {paper.myThoughts && <PaperNoteSection title="My Thoughts"><p>{paper.myThoughts}</p></PaperNoteSection>}
-            {paper.connectionToResearch && <PaperNoteSection title="Connection to My Research"><p>{paper.connectionToResearch}</p></PaperNoteSection>}
           </div>
         </div>
       </article>

@@ -22,6 +22,9 @@ it('embeds and offers a download for a locally hosted public PDF', async () => {
   expect(
     reader.compareDocumentPosition(notes) & Node.DOCUMENT_POSITION_FOLLOWING,
   ).toBeTruthy();
+  expect(
+    within(container).queryByRole('heading', { name: 'Connection to My Research' }),
+  ).not.toBeInTheDocument();
 });
 
 it('uses only the official source for the ACM paper', async () => {
